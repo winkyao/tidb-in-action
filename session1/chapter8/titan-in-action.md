@@ -101,5 +101,5 @@ level-merge = true
 
 相应地，level mege 写放大会比 Titan 稍高，但依然低于原生的 RocksDB。
 
-Level merge 与 Titan 原有的算法目前并不兼容，已经打开 Titan 的 TiKV 实例不可以更改是否使用 Level merge 的设置。
+
 
