@@ -46,7 +46,7 @@ tiup run playground v3.0.9
 tiup run playground nightly
 ```
 
-**通过**** ****playground**** ****搭建测试集群**
+**通过playground搭建测试集群**
 
 作为一个分布式系统，一个最基础的 TiDB 测试集群通常由 2 个 TiDB 组件，3 个 TiKV 组件和3个PD组件来构成。通过 playground，我们同样可以快速搭建出上述的一套基础测试集群。相关的命令如下：
 
