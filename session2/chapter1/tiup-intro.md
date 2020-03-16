@@ -14,6 +14,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://tiup-mirrors.pingcap.com/install.sh
 通过tiup --help 查看其支持的指令和参数：
 
 ```
+# tiup --help
 Usage:
   tiup [flags] <command> [args...]
   tiup [flags] <component> [args...]
@@ -62,6 +63,7 @@ flags:
 * --bin: 打印某个组件的二进制文件存放位置
 * -h, --help: 打印 help 信息
 * --mirror: 指定一个镜像替换默认的官方镜像
+
 command:
 * install: 安装某个组件的某个版本
 * list: 查看有哪些组件可以安装，以及这些组件有哪些版本可选
@@ -70,7 +72,9 @@ command:
 * status: 查看组件组件的运行状态/运行历史
 * clean: 清除某次运行后的数据
 * help: 打印 help 信息，后面跟子命令则是打印该子命令的使用方法
+
 args：
+
 通常用于对command进行补充，例如我们想要知道某个子命令的具体用法，执行 tiup subcommand -h/--help 就可以看到
 
 **使用参考**
