@@ -2,7 +2,7 @@
 
 如今，在 TiDB4.0 的生态系统里，TiUP作为新的工具，承担着包管理器的角色，管理着 TiDB 生态下众多的组件（例如 TiDB、PD、TiKV），用户想要运行 TiDB 生态中任何东西的时候，只需要执行 TiUP 的一行命令即可，相比之前极大的降低了管理难度。用户可以访问 [https://tiup.io/](https://tiup.io/) 来查看相应的文档。本文基于v0.0.2版本 tiup 编写。
 
-**安装**
+**命令安装**
 
 TiUP 当前支持在平台 Linux/MacOS/Windows WSL 运行，登陆终端控制台执行下面命令，如果无错误输出即完成tiup的安装：
 
@@ -55,8 +55,14 @@ Examples:
 Use "tiup [command] --help" for more information about a command.
 
 ```
-可以看到大致有这些命令可选：
-可选的命令如下：
+
+命令参数解释如下：
+
+flags:
+* --bin: 打印某个组件的二进制文件存放位置
+* -h, --help: 打印 help 信息
+* --mirror: 指定一个镜像替换默认的官方镜像
+command:
 * install: 安装某个组件的某个版本
 * list: 查看有哪些组件可以安装，以及这些组件有哪些版本可选
 * uninstall: 删除某个组件
@@ -64,20 +70,12 @@ Use "tiup [command] --help" for more information about a command.
 * status: 查看组件组件的运行状态/运行历史
 * clean: 清除某次运行后的数据
 * help: 打印 help 信息，后面跟子命令则是打印该子命令的使用方法
+args：
+通常用于对command进行补充，例如我们想要知道某个子命令的具体用法，执行 tiup subcommand -h/--help 就可以看到
 
-然后 tiup 支持可选的 flag:
+**使用参考**
 
-* --bin: 打印某个组件的二进制文件存放位置
-* -h, --help: 打印 help 信息
-* --mirror: 指定一个镜像替换默认的官方镜像
-
-如果我们想要知道某个子命令的具体用法，执行 tiup subcommand -h 就可以看到，比如我们想知道 install 命令有哪些参数可以传，就执行 tiup install -h。
-
-下面我们按照正常使用习惯依次介绍这些命令。
-
-* 查询列表：tiup list
-
-功能：查询tiup支持安装的组件以及版本
+* 查询组件列表：tiup list
 
 命令帮助信息：
 
@@ -171,7 +169,7 @@ tiup update --nightly --all
 tiup update --self
 ```
 
-* 删除组件：tiup uninstall 参数
+* 删除组件：tiup uninstall 
 
 TiUP 安装的组件是要占用本地磁盘空间的，如果不想要那么多老版本的组件，可以先查看当前安装了哪些版本的组件，然后在删除某个组件的某个版本，同时也支持删除所有版本。命令帮助信息：
 
@@ -197,7 +195,7 @@ tiup uninstall --all
 ```
 * 数据清除：tiup clean
 
-tiup uninstall 只是将组件的二进制文件从系统中删除了，但是组件运行时生成的数据仍然存在，如果想要删除，需要使用 tiup clean:
+tiup uninstall 只是将组件的二进制文件从系统中删除了，但是组件运行时生成的数据仍然存在，如果想要删除，需要使用 tiup clean。命令帮助信息：
 
 ```
 Usage:
@@ -215,9 +213,9 @@ Flags:
 tiup clean experiment
 ```
 
-* 其他重要功能
+* 查询已经安装的组件状态
 
-TiUP还提供查看所有实例（包括正在运行）的功能，帮助信息如下：
+TiUP提供查看所有实例（包括正在运行）的功能，帮助信息如下：
 
 ```
 tiup status
