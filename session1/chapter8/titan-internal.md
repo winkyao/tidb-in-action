@@ -16,7 +16,7 @@ Titan 维持 RocksDB 的写入流程不变，在 Flush 和 Compaction 时刻将�
 ![图 1 Titan 工作原理示意图](/res/session1/chapter8/titan-internal/1.png)
 
 ### BlobFile
-BlobFile 是存放 LSM-tree 中分离得到的 KV 记录的文件，它由 heeader、record 、meta block、meta index 和 footer 组成。其中每个 record 用于存放一个 key-value 对；meta block 用于在未来保存用户自定义数据；而 meta index  则用于加快检索 meta block 的速度。
+BlobFile 是存放 LSM-tree 中分离得到的 KV 记录的文件，它由 header、record 、meta block、meta index 和 footer 组成。其中每个 record 用于存放一个 key-value 对；meta block 用于在未来保存用户自定义数据；而 meta index  则用于加快检索 meta block 的速度。
 
 ![图 2 BlobFile 文件格式](/res/session1/chapter8/titan-internal/2.png)
 
