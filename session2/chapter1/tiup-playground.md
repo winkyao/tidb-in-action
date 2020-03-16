@@ -35,6 +35,7 @@ tiup run playground
 tiup run --tag=tidb-cluster playground
 ```
 playground 同样支持通过版本号的方式来启动。
+
 示例一：使用TiUP启动3.0.9版本的集群
 
 ```
