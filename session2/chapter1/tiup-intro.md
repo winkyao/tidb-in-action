@@ -222,12 +222,15 @@ Flags:
       --all    Clean all data of instantiated components
   -h, --help   help for clean
 ```
+
 如果需要清除所有组件的所有运行数据，加上 --all 即可。
+
 示例一：根据实例 tag 清除数据：
 
 ```
 tiup clean experiment
 ```
+
 * 其他功能：tiup [help | status]
 
 TiUP还提供帮助和查看所有实例（包括正在运行）的功能，相关的命令和参数如下：
