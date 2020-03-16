@@ -16,11 +16,13 @@ TiDB 集群是由多个组件构成的分布式系统，一个典型的 TiDB 集
 ```
 
 (2) 通过playground部署本地集群
-接着我们可以通过 install 来安装最新版本的 playground 的，相关的命令如下：
+
+使用 install 来安装 playground ，命令如下：
 
 ```
-# tiup --tag=tidb-cluster playground v3.0.9
+# tiup --tag=tidb-cluster playground v3.0.11
 ```
+
 在默认情况中，playground 会启动由一个TiDB，一个 TiKV 和一个 PD 构成的集群。如果不指定 ```--tag``` 的选项，TiUP 会随机生成一个名称。如果不指定版本，默认playground会安装最新版本
 。
 
@@ -29,11 +31,7 @@ TiDB 集群是由多个组件构成的分布式系统，一个典型的 TiDB 集
 作为一个分布式系统，一个最基础的 TiDB 测试集群通常由 2 个 TiDB 组件，3 个 TiKV 组件和3个PD组件来构成。
 
 ```
-# tiup run playground --db=2 --kv=3 --pd=3
-```
-相比于之前需要手动搭建各个组件，修改各种配置，playground 功能极大的减少了搭建时间和成本。同时，我们还可以通过 monitor 选项来为测试集群增加监控功能，相关的命令如下：
-```
-# tiup --tag=tidb-cluster playground --db=2 --kv=3 --pd=3 --monitor
+# tiup --tag=tidb-cluster playground  --db=2 --kv=3 --pd=3 --monitor v3.0.11
 ```
 在集群搭建成功后，playground 会提供 mysql 对接的连接信息：
 ```
