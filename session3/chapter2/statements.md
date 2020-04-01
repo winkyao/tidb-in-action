@@ -1,6 +1,6 @@
 # 2.2 分析 SQL 执行性能
 
-在上一节介绍了怎样通过 KeyVis 来识别 TiDB 的业务的模式，本节主要带领读者体会怎样通过 Dashboard 的 Statements 信息来分析执行 SQL 情况，从而达到帮助运维人员快速定位 SQL 性能问题。
+在上一节介绍了怎样通过 KeyViz 来识别 TiDB 的业务的模式，本节主要带领读者体会怎样通过 Dashboard 的 Statements 信息来分析执行 SQL 情况，从而达到帮助运维人员快速定位 SQL 性能问题。
 
 ## Statements 是什么
 
@@ -75,4 +75,4 @@ TiDB 已经有很多性能排查工具了，但我们在应对各类场景时，
 
 注: `tidb_stmt_summary_history_size`、`max-stmt-count`、`max-sql-length` 这些配置都影响内存占用，建议根据实际情况调整，不宜设置得过大。
 
-总之，有了可视化 Statements 就可以快速定位某个 SQL 性能问题，之后也可以可以通过前面章节介绍的 KeyVis 来进行分析。
+总之，有了可视化 Statements 就可以快速定位某个 SQL 性能问题，之后也可以可以通过前面章节介绍的 KeyViz 来进行分析。
